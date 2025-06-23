@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pesan Brosur / Flyer</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 16px;
+    }
+    form {
+      background-color: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .description {
+      font-size: 14px;
+      color: #444;
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 16px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      background-color: #fff;
+    }
+    textarea {
+      resize: vertical;
+    }
+    button {
+      width: 100%;
+      margin-top: 24px;
+      background-color: #25d366;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    button:hover {
+      background-color: #1ebe5d;
+    }
+    .note {
+      margin-top: 24px;
+      font-size: 14px;
+      color: #d35400;
+      background: #fff6e5;
+      padding: 12px 14px;
+      border-radius: 8px;
+      line-height: 1.5;
+    }
+    .note b {
+      display: block;
+      font-size: 16px;
+      color: #c0392b;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <form onsubmit="sendToWA(); return false;">
+    <h2>Pesan Brosur / Flyer</h2>
+    <div class="description">
+      Brosur adalah media dari kertas berukuran kecil (biasanya berukuran 14,8 x 21 cm atau 21 x 29,7 cm) yang digunakan oleh perusahaan ataupun perorangan yang ingin menyampaikan informasi pemasaran terkait produk, usaha ataupun yang lainnya. Brosur biasanya berisi informasi yang singkat namun tepat sasaran dengan tujuan untuk meyakinkan calon pelanggan kita untuk memilih produk dan usaha kita. Brosur biasa dicetak pada lembaran kecil dengan desain menarik agar lebih menarik perhatian dan rasa penasaran.
+    </div>
+
+    <label for="nama">Nama Anda</label>
+    <input type="text" id="nama" required>
+
+    <label for="wa">Nomor WA Anda</label>
+    <input type="tel" id="wa" pattern="[0-9]+" required>
+
+    <label for="ukuran">Ukuran Brosur</label>
+    <select id="ukuran" required>
+      <option value="" disabled selected>Pilih ukuran</option>
+      <option value="A5 (14,8 x 21 cm)">A5 (14,8 x 21 cm)</option>
+      <option value="A4 (21 x 29,7 cm)">A4 (21 x 29,7 cm)</option>
+      <option value="F4 (21,5 x 33 cm)">F4 (21,5 x 33 cm)</option>
+    </select>
+
+    <label for="sisi">Sisi Cetakan</label>
+    <select id="sisi" required>
+      <option value="" disabled selected>Pilih sisi cetak</option>
+      <option value="1 Sisi (Depan Saja)">1 Sisi (Depan Saja)</option>
+      <option value="2 Sisi (Depan - Belakang)">2 Sisi (Depan - Belakang)</option>
+    </select>
+
+    <label for="bahan">Bahan Jenis Kertas</label>
+    <select id="bahan" required>
+      <option value="" disabled selected>Pilih jenis kertas</option>
+      <option value="HVS 70 gr (Warna)">HVS 70 gr (Print Warna)</option>
+      <option value="HVS 70 gr (Hitam-Putih)">HVS 70 gr (Print Hitam-Putih)</option>
+      <option value="Artpaper 120 gr">Artpaper 120 gr</option>
+      <option value="Artpaper 150 gr">Artpaper 150 gr</option>
+    </select>
+
+    <label for="lipatan">Jumlah Lipatan</label>
+    <select id="lipatan" required>
+      <option value="" disabled selected>Pilih lipatan</option>
+      <option value="Tanpa Lipatan">Tanpa Lipatan</option>
+      <option value="1 Garis Lipatan">1 Garis Lipatan</option>
+      <option value="2 Garis Lipatan">2 Garis Lipatan</option>
+    </select>
+
+    <label for="jumlah">Jumlah</label>
+    <input type="number" id="jumlah" min="1" required>
+
+    <label for="tanggal">Anda membutuhkan print ini kapan?</label>
+    <input type="date" id="tanggal" required>
+
+    <label for="jam">Pada jam berapa?</label>
+    <input type="time" id="jam" required>
+
+    <label for="catatan">Catatan Khusus untuk Admin Kami</label>
+    <textarea id="catatan" rows="3" placeholder="Contoh: Tolong gunakan kertas glossy, warna utama merah. Hasil potongnya yg rapi ya. dll."></textarea>
+
+ <div class="note">
+      <b>Catatan:</b>
+      Estimasi Dateline Yang Anda Atur Bisa Berubah Sesuai Kondisi Antrian.<br>
+      Anda Bisa Atur Negosiasi Waktu Dateline Dengan Admin Kami.<br>
+      <strong>"Pastikan File Anda Ready / Siap Print"</strong>
+    </div>
+
+    <button type="submit">Cek Harga ke Admin Metropolis Print</button>
+
+   
+  </form>
+
+  <script>
+    function sendToWA() {
+      const nama = document.getElementById("nama").value;
+      const wa = document.getElementById("wa").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const sisi = document.getElementById("sisi").value;
+      const bahan = document.getElementById("bahan").value;
+      const lipatan = document.getElementById("lipatan").value;
+      const jumlah = document.getElementById("jumlah").value;
+      const tanggal = document.getElementById("tanggal").value;
+      const jam = document.getElementById("jam").value;
+      const catatan = document.getElementById("catatan").value || "-";
+
+      const pesan = `Halo Admin Metropolis Print!%0A%0ASaya ingin memesan Brosur/Flyer:%0A` +
+        `👤 Nama: ${nama}%0A📱 WA: ${wa}%0A📐 Ukuran: ${ukuran}%0A📄 Sisi: ${sisi}%0A🧾 Bahan: ${bahan}%0A` +
+        `📏 Lipatan: ${lipatan}%0A🔢 Jumlah: ${jumlah} pcs%0A📅 Tanggal: ${tanggal}%0A⏰ Jam: ${jam}%0A📝 Catatan: ${catatan}`;
+
+      const adminNumber = "6281216370657";
+      const url = `https://wa.me/${adminNumber}?text=${encodeURIComponent(pesan)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+
+</body>
+</html>
